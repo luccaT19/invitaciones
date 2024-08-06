@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+        }
+        .background-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .buttons {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://drive.google.com/uc?export=view&id=1NjVLm_LBdYxc1Rgo5arReFnS9MmJjUXm" alt="Invitación" class="background-image">
+        <div class="buttons">
+            <button class="yes" onclick="sendMessage('Voy a asistir')">Voy a asistir</button>
+            <button class="no" onclick="sendMessage('No voy a asistir')">No voy a asistir</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(message) {
+            var number = '+5491166525600'; // Número en formato internacional para Argentina
+            var url = `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
